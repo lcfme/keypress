@@ -1,6 +1,6 @@
 {
-  "name": "keypress",
-  "version": "0.0.1",
+  "name": "multi-keys-handler",
+  "version": "0.0.3",
   "description": "",
   "main": "keypress.js",
   "scripts": {
@@ -16,6 +16,10 @@
     "babelify": "^8.0.0",
     "browserify": "^16.2.2",
     "uglify-js": "^3.4.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lcfme/keypress.git"
   },
   "dependencies": {}
 }
