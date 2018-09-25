@@ -1,13 +1,13 @@
 {
   "name": "keypress",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "keypress.js",
   "scripts": {
     "build": "browserify -r ./index.js -s Keypress -t [ babelify ] | uglifyjs -c > ./keypress.js"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-plugin-transform-runtime": "^6.23.0",
