@@ -5,10 +5,9 @@ module.exports = function KeyPress(keycodes, callback) {
         keyMap[String(oKeycodes[i])] = false;
     }
     function onKeyDown(e) {
-        e.preventDefault();
         var keycode = e.which || e.keyCode;
         keyMap[String(keycode)] = true;
-        run();
+        run(e);
     }
     function onKeyUp(e) {
         var keycode = e.which || e.keyCode;
@@ -17,7 +16,7 @@ module.exports = function KeyPress(keycodes, callback) {
 
     window.addEventListener('keydown', onKeyDown);
     window.addEventListener('keyup', onKeyUp);
-    function run() {
+    function run(e) {
         var flag = true;
         for (var i = oKeycodes.length; i--; ) {
             var sKeycode = String(oKeycodes[i]);
@@ -26,7 +25,10 @@ module.exports = function KeyPress(keycodes, callback) {
                 break;
             }
         }
-        if (flag) callback();
+        if (flag) {
+            e.preventDefault();
+            callback();
+        }
     }
     return function() {
         window.removeEventListener('keydown', onKeyDown);
